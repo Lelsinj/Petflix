@@ -126,6 +126,12 @@ body {
     transition: background-color 0.3s;
 }
 
+a.button {
+    text-decoration: none;  
+    color: white;  
+    transition: color 0.3s;  
+}
+
 .profile div:hover {
     background-color: #e50914;
 }
