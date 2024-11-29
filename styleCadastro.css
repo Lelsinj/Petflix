@@ -1,13 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+/* Reset básico e configuração de fontes */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #45a555, #a7d6b7);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
+
+/* Container do formulário */
 .container {
     background: #fff;
     padding: 20px;
@@ -16,19 +24,27 @@ body {
     max-width: 500px;
     width: 100%;
 }
+
+/* Estilos do título do formulário */
 .container h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #274b33;
 }
+
+/* Estilos do grupo de formulário */
 .form-group {
     margin-bottom: 15px;
 }
+
+/* Estilos dos rótulos dos campos de entrada */
 .form-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
+
+/* Estilos dos campos de entrada, seleção e texto */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -37,20 +53,47 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+/* Estilo para o campo de texto (textarea) */
 .form-group textarea {
     resize: none;
     height: 100px;
 }
-.form-group .checkbox-group {
+
+/* Estilo para a seção de vacinas */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 10px; /* Espaçamento entre os elementos */
+    margin-top: 10px;
+}
+
+/* Estilos para cada item de vacina */
+.checkbox-item {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; /* Espaçamento entre o checkbox e o texto */
 }
-.form-group .checkbox-group label {
-    margin-right: 10px;
+
+/* Estilos para os checkboxes */
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #4CAF50; /* Cor personalizada para o checkbox */
 }
-.form-group .checkbox-group input {
-    margin-right: 5px;
+
+/* Estilo para os rótulos de vacinas */
+.checkbox-item label {
+    font-size: 14px;
+    color: #333;
 }
+
+/* Estilo para o campo "Outro" de vacina */
+#outroVacinaGroup {
+    margin-top: 15px;
+}
+
+/* Estilos do botão de envio */
 .form-group button {
     width: 100%;
     padding: 10px;
@@ -61,6 +104,31 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* Estilo para o botão ao passar o mouse */
 .form-group button:hover {
     background-color: #45a049;
+}
+
+/* Estilos para o input de vacina "Outro" */
+#outroVacinaGroup input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos adicionais para melhorar a legibilidade */
+input,
+select,
+textarea {
+    font-size: 14px;
+}
+
+label {
+    font-size: 16px;
+}
+
+button {
+    font-size: 16px;
 }
