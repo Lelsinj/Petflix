@@ -16,4 +16,5 @@
 |RF10|O sistema deve permitir que o usuário se cadastre e faça login|Alta|
 |RF11|O sistema deve pedir E-mail, Senha para realizar o login|Alta|
 |RF12|O sistema deve pedir Nome, E-mail e Senha para realizar o cadastro|Alta|
+|RF13|O sistema deve ter um perfil de usuário, onde, deve ter as informaçoes pessoais e animais "favoritados"|média|
 </div>
