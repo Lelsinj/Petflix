@@ -27,6 +27,11 @@
                     <option value="Outro">Outro</option>
                 </select>
             </div>
+            <!-- Campo adicional para especificar tipo do pet -->
+            <div class="form-group" id="outroTipoPetGroup" style="display: none;">
+                <label for="outroTipo">Especifique o tipo do Pet:</label>
+                <input type="text" id="outroTipo" name="outroTipo">
+            </div>
             <div class="form-group">
                 <label>Quais vacinas tomou:</label>
                 <div class="checkbox-group">
@@ -56,19 +61,20 @@
                 <label for="descricao">Descrição sobre o Pet:</label>
                 <textarea id="descricao" name="descricao" required></textarea>
             </div>
+            <!-- Botão para adicionar foto -->
             <div class="form-group">
-                <button type="submit">Enviar</button>
+                <button type="button" class="btn-foto">Adicione uma foto</button>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn-enviar">Enviar</button>
             </div>
         </form>
+        <div class="form-group voltar-container">
+            <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
+        </div>
     </div>
-    <script>
-        // Mostrar/ocultar campo "Outro" dinamicamente
-        const vacinaOutroCheckbox = document.getElementById('vacinaOutro');
-        const outroVacinaGroup = document.getElementById('outroVacinaGroup');
 
-        vacinaOutroCheckbox.addEventListener('change', () => {
-            outroVacinaGroup.style.display = vacinaOutroCheckbox.checked ? 'block' : 'none';
-        });
-    </script>
+    <!-- Referência ao arquivo JavaScript -->
+    <script src="scriptCadastro.js"></script>
 </body>
 </html>

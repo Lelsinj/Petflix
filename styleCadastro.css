@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(to right, #45a555, #a7d6b7);
+    background: linear-gradient(to right, #000000, #393939);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,8 +20,8 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
+    box-shadow: 0 12px 24px rgb(163, 162, 162);
+    max-width: 510px;
     width: 100%;
 }
 
@@ -29,7 +29,7 @@ body {
 .container h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #274b33;
+    color: #ff0000;
 }
 
 /* Estilos do grupo de formulário */
@@ -48,10 +48,11 @@ body {
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 95%;
+    width: 99%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    
 }
 
 /* Estilo para o campo de texto (textarea) */
@@ -79,7 +80,7 @@ body {
 .checkbox-item input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: #4CAF50; /* Cor personalizada para o checkbox */
+    accent-color: #ff0000; /* Cor personalizada para o checkbox */
 }
 
 /* Estilo para os rótulos de vacinas */
@@ -92,12 +93,10 @@ body {
 #outroVacinaGroup {
     margin-top: 15px;
 }
-
-/* Estilos do botão de envio */
-.form-group button {
+.btn-enviar {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #ff0000;
     border: none;
     color: white;
     font-size: 16px;
@@ -105,9 +104,8 @@ body {
     cursor: pointer;
 }
 
-/* Estilo para o botão ao passar o mouse */
-.form-group button:hover {
-    background-color: #45a049;
+.btn-enviar:hover {
+    background-color: #3f0404;
 }
 
 /* Estilos para o input de vacina "Outro" */
@@ -132,3 +130,51 @@ label {
 button {
     font-size: 16px;
 }
+
+/* Estilo para o campo "Especifique o tipo do pet" */
+#outroTipoPetGroup {
+    margin-top: 15px;
+}
+
+.voltar-container {
+    text-align: center; /* Centraliza o botão no container */
+}
+
+.btn-voltar {
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove as bordas padrão do botão */
+    color: #333; /* Define a cor do texto (azul, neste caso) */
+    font-size: 16px; /* Define o tamanho da fonte */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    text-decoration: underline; /* Adiciona o sublinhado */
+    padding: 0; /* Remove o padding padrão */
+}
+
+.btn-voltar:hover {
+    color: #b30000; /* Altera a cor ao passar o mouse */
+    text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+}
+
+
+.btn-foto {
+    width: 100%;
+    padding: 12px;
+    background-color: #b4a2a2; /* Cor laranja avermelhada */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-foto:hover {
+    background-color: #8b7a78; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+}
+
+.btn-foto:focus {
+    outline: none;
+}
+
