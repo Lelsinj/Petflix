@@ -178,3 +178,12 @@ button {
     outline: none;
 }
 
+.back-link {
+    display: inline-block;
+    color: #ff0000;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}

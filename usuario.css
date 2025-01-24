@@ -30,6 +30,35 @@ header {
     z-index: 2;
 }
 
+.btnVoltar{
+    background-color: #e50914; /* Vermelho Netflix */
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-decoration: none; /* Remove sublinhado */
+    text-align: center;
+    cursor: pointer;
+    display: inline-block; /* Faz parecer com um botão */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  }
+  
+  .btnVoltar:hover {
+    background-color: #f40612; /* Vermelho mais claro */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+  }
+  
+  .btnVoltar:active {
+    transform: scale(0.95); /* Efeito de clique */
+  }
+  
+
+
 /* Container do perfil */
 .profile-container {
     display: flex;
@@ -102,6 +131,7 @@ h1 {
     align-items: center;
     justify-content: space-between; /* Alinha o texto e o ícone */
     text-decoration: none;
+    color: #000000;
 }
 
 .option-btn .material-icons {
