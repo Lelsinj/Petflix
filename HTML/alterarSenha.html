@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Alterar Senha</title>
-    <link rel="stylesheet" href="alterarSenha.css">
+    <link rel="stylesheet" href="/CSS/alterarSenha.css">
 </head>
 <body>
     <div class="container">
         <h1>ALTERAR SENHA</h1>
         <!-- O formulário redireciona para a página perfil.html -->
-        <form id="formAlterarSenha" action="alterarSenha.html" method="GET">
+        <form id="formAlterarSenha" action="/HTML/alterarSenha.html" method="GET">
             <label for="password1">Nova senha:</label>
             <input type="password" id="password1" name="password" required>
     
@@ -20,7 +20,7 @@
             <!-- Botão "Entrar" para enviar o formulário -->
             <button type="submit" id="confirmarBtn">Confirmar</button>
         </form>
-        <a href="usuario.html" class="back-link">Voltar</a>
+        <a href="/HTML/usuario.html" class="back-link">Voltar</a>
     </div>
     <script>
         document.getElementById('confirmarBtn').addEventListener('click', function (event) {

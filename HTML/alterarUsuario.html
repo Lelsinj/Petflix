@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Alterar usuário</title>
-    <link rel="stylesheet" href="alterarUsuario.css">
+    <link rel="stylesheet" href="/CSS/alterarUsuario.css">
 </head>
 <body>
     <div class="container">
         <h1>ALTERAR USUÁRIO</h1>
         <!-- O formulário redireciona para a página perfil.html -->
-        <form id="formAlterarUsuario" action="alterarUsuario.html" method="GET">
+        <form id="formAlterarUsuario" action="/HTML/alterarUsuario.html" method="GET">
             <label for="password1">Novo usuário:</label>
             <input type="nome" id="password1" name="password" required>
     
@@ -20,7 +20,7 @@
             <!-- Botão "Entrar" para enviar o formulário -->
             <button type="submit" id="confirmarBtn">Confirmar</button>
         </form>
-        <a href="usuario.html" class="back-link">Voltar</a>
+        <a href="/HTML/usuario.html" class="back-link">Voltar</a>
     </div>
     <script>
         document.getElementById('confirmarBtn').addEventListener('click', function (event) {
