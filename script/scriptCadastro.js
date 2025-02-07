@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 salvarPet(nome, raca, tipo, outroTipo, descricao, vacinas, reader.result);
             };
         } else {
-            salvarPet(nome, raca, tipo, outroTipo, descricao, vacinas, "/assets/default.jpg");
+            salvarPet(nome, raca, tipo, outroTipo, descricao, vacinas, "../assets/default.jpg");
         }
     });
 });
@@ -65,6 +65,6 @@ function salvarPet(nome, raca, tipo, outroTipo, descricao, vacinas, imagem) {
 
     // Aguarda um pequeno tempo antes de redirecionar para evitar problemas com LocalStorage
     setTimeout(() => {
-        window.location.href = "/HTML/adotar.html";
+        window.location.href = "../HTML/adotar.html";
     }, 500);
 }
