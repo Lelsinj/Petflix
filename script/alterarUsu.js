@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Informa o usuário e redireciona para a página de perfil
                 if (confirm("Usuário alterado com sucesso! Clique em OK para continuar.")) {
-                    window.location.href = "/HTML/usuario.html";
+                    window.location.href = "../HTML/usuario.html";
                 }
             } else {
                 alert("Nenhum usuário cadastrado. Por favor, registre-se.");
