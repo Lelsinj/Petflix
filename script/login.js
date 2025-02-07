@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Verifica se o email e a senha correspondem ao usuário cadastrado
       if (storedUser.email === email && storedUser.password === password) {
         // Login bem-sucedido: redireciona para a página de perfil
-        window.location.href = '/HTML/perfil.html';
+        window.location.href = '../HTML/perfil.html';
       } else {
         alert('Email ou senha incorretos. Tente novamente.');
       }
