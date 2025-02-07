@@ -10,7 +10,7 @@
     <div class="container">
         <h1>ALTERAR SENHA</h1>
         <!-- O formulário redireciona para a página perfil.html -->
-        <form id="formAlterarSenha" action="/HTML/alterarSenha.html" method="GET">
+        <form id="formAlterarSenha" action="../HTML/alterarSenha.html" method="GET">
             <label for="password1">Nova senha:</label>
             <input type="password" id="password1" name="password" required>
     
@@ -20,7 +20,7 @@
             <!-- Botão "Entrar" para enviar o formulário -->
             <button type="submit" id="confirmarBtn">Confirmar</button>
         </form>
-        <a href="/HTML/usuario.html" class="back-link">Voltar</a>
+        <a href="../HTML/usuario.html" class="back-link">Voltar</a>
     </div>
     <script>
         document.getElementById('confirmarBtn').addEventListener('click', function (event) {
@@ -31,7 +31,7 @@
             if (senha1 === senha2) {
                 const confirmacao = confirm("Senha alterada com sucesso! Clique em OK para continuar.");
                 if (confirmacao) {
-                    window.location.href = "usuario.html";
+                    window.location.href = "../HTML/usuario.html";
                 }
             } else {
                 alert("As senhas não coincidem. Por favor, tente novamente.");
