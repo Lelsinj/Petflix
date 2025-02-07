@@ -1,14 +1,14 @@
 const posts = [
-    { id: 1, user: "Paçoca", image: "/assests/pacoca.jpg", caption: "Adote este lindo amiguinho!", gender: "F", age: "adulto", isFavorite: false, adopted: false },
-    { id: 2, user: "Bino", image: "/assests/bino.jpg", caption: "Pronto para um novo lar.", gender: "M", age: "adulto", isFavorite: false, adopted: false },
-    { id: 3, user: "Kiara", image: "/assests/kiara.jpg", caption: "Carinho e lealdade.", gender: "F", age: "adulto", isFavorite: false, adopted: false },
-    { id: 4, user: "Laika", image: "/assests/laika.jpg", caption: "Uma nova chance de ser feliz.", gender: "F", age: "filhote", isFavorite: false, adopted: false },
-    { id: 5, user: "Pipo", image: "/assests/pipo.jpg", caption: "Esperando por um lar cheio de amor.", gender: "M", age: "filhote", isFavorite: false, adopted: false },
-    { id: 6, user: "Bia", image: "/assests/bia.jpg", caption: "Adoção é amor!", gender: "F", age: "adulto", isFavorite: false, adopted: false },
-    { id: 7, user: "Nibo", image: "/assests/nibo.jpg", caption: "Um companheiro fiel.", gender: "M", age: "adulto", isFavorite: false, adopted: false },
-    { id: 8, user: "Paula", image: "/assests/paula.jpg", caption: "Pronto para novas aventuras.", gender: "F", age: "filhote", isFavorite: false, adopted: false },
-    { id: 9, user: "Roberto", image: "/assests/roberto.jpg", caption: "Cada animal merece uma chance.", gender: "M", age: "adulto", isFavorite: false, adopted: false },
-    { id: 10, user: "Juliana", image: "/assests/juliana.jpg", caption: "Encontre seu novo melhor amigo.", gender: "F", age: "adulto", isFavorite: false, adopted: false }
+    { id: 1, user: "Paçoca", image: "../assets/pacoca.jpg", caption: "Adote este lindo amiguinho!", gender: "F", age: "adulto", isFavorite: false, adopted: false },
+    { id: 2, user: "Bino", image: "../assets/bino.jpg", caption: "Pronto para um novo lar.", gender: "M", age: "adulto", isFavorite: false, adopted: false },
+    { id: 3, user: "Kiara", image: "../assets/kiara.jpg", caption: "Carinho e lealdade.", gender: "F", age: "adulto", isFavorite: false, adopted: false },
+    { id: 4, user: "Laika", image: "../assets/laika.jpg", caption: "Uma nova chance de ser feliz.", gender: "F", age: "filhote", isFavorite: false, adopted: false },
+    { id: 5, user: "Pipo", image: "../assets/pipo.jpg", caption: "Esperando por um lar cheio de amor.", gender: "M", age: "filhote", isFavorite: false, adopted: false },
+    { id: 6, user: "Bia", image: "../assets/bia.jpg", caption: "Adoção é amor!", gender: "F", age: "adulto", isFavorite: false, adopted: false },
+    { id: 7, user: "Nibo", image: "../assets/nibo.jpg", caption: "Um companheiro fiel.", gender: "M", age: "adulto", isFavorite: false, adopted: false },
+    { id: 8, user: "Paula", image: "../assets/paula.jpg", caption: "Pronto para novas aventuras.", gender: "F", age: "filhote", isFavorite: false, adopted: false },
+    { id: 9, user: "Roberto", image: "../assets/roberto.jpg", caption: "Cada animal merece uma chance.", gender: "M", age: "adulto", isFavorite: false, adopted: false },
+    { id: 10, user: "Juliana", image: "../assets/juliana.jpg", caption: "Encontre seu novo melhor amigo.", gender: "F", age: "adulto", isFavorite: false, adopted: false }
 ];
 
 /* Função para buscar os pets cadastrados no LocalStorage */
@@ -37,7 +37,7 @@ function renderPosts() {
         postDiv.classList.add("post");
         postDiv.innerHTML = `
             <h3>${post.user || post.nome}</h3>
-            <img src="${post.image || post.imagem || '/assests/default.jpg'}" alt="Imagem do animal" 
+            <img src="${post.image || post.imagem || '../assets/default.jpg'}" alt="Imagem do animal" 
      onerror="this.onerror=null;this.src='/assests/default.jpg';">
 
             <p>${post.caption || post.descricao}</p>
