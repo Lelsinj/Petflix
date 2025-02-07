@@ -8,7 +8,7 @@ body {
     background: linear-gradient(to right, #000000, #393939);
 }
 header {
-    background: #d41d1d;
+    background: #891111;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -30,17 +30,17 @@ header {
     gap: 10px;
     padding: 20px;
     flex-direction: column;
+    width: 50%;
 }
 .post {
-    background: white;
+    background:rgba(255, 255, 255, 0.9);
     border-radius: 5px;
     padding: 10px;
-    width: 300px;
     text-align: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .post img {
-    width: 100%;
+    width: 50%;
     height: auto;
     border-radius: 5px;
 }
@@ -62,3 +62,22 @@ header {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
+
+.btnVoltar{
+    margin-left: 5px;
+    background-color: #e50914; /* Vermelho Netflix */
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-decoration: none; /* Remove sublinhado */
+    text-align: center;
+    cursor: pointer;
+    display: inline-block; /* Faz parecer com um botão */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  }
+

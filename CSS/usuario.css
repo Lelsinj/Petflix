@@ -212,6 +212,7 @@ footer .developers ul li::marker {
     color: #000000; /* Cor personalizada para as bolinhas */
    
     margin-right: 10px; /* Espaço entre a bolinha e o texto */
+    margin-left: 100px;
 }
 
 footer .developers ul li {
