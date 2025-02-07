@@ -3,40 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Alterar usuário</title>
+    <title>Tela de Alterar Usuário</title>
     <link rel="stylesheet" href="/CSS/alterarUsuario.css">
 </head>
 <body>
     <div class="container">
         <h1>ALTERAR USUÁRIO</h1>
-        <!-- O formulário redireciona para a página perfil.html -->
-        <form id="formAlterarUsuario" action="/HTML/alterarUsuario.html" method="GET">
-            <label for="password1">Novo usuário:</label>
-            <input type="nome" id="password1" name="password" required>
+        <!-- Formulário sem atributo action para que o JS intercepte o envio -->
+        <form id="formAlterarUsuario">
+            <label for="novoUsuario1">Novo usuário:</label>
+            <input type="text" id="novoUsuario1" name="novoUsuario1" required>
     
-            <label for="password2">Repita o novo usuário:</label>
-            <input type="nome" id="password2" name="password" required>
+            <label for="novoUsuario2">Repita o novo usuário:</label>
+            <input type="text" id="novoUsuario2" name="novoUsuario2" required>
     
-            <!-- Botão "Entrar" para enviar o formulário -->
             <button type="submit" id="confirmarBtn">Confirmar</button>
         </form>
         <a href="/HTML/usuario.html" class="back-link">Voltar</a>
     </div>
-    <script>
-        document.getElementById('confirmarBtn').addEventListener('click', function (event) {
-            event.preventDefault();
-            const senha1 = document.getElementById('password1').value;
-            const senha2 = document.getElementById('password2').value;
     
-            if (senha1 === senha2) {
-                const confirmacao = confirm("Usuário alterado com sucesso! Clique em OK para continuar.");
-                if (confirmacao) {
-                    window.location.href = "usuario.html";
-                }
-            } else {
-                alert("Os usuários não coincidem. Por favor, tente novamente.");
-            }
-        });
-    </script>
+    <!-- Inclua o arquivo JS -->
+    <script src="/script/alterarUsu.js"></script>
 </body>
 </html>
