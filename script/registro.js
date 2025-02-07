@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Cadastro realizado com sucesso! Agora você pode fazer login.');
   
       // Redireciona para a tela de login
-      window.location.href = '/HTML/login.html';
+      window.location.href = '../HTML/login.html';
     });
   });
   
