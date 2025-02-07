@@ -11,31 +11,41 @@ const posts = [
     { id: 10, user: "Juliana", image: "/assests/juliana.jpg", caption: "Encontre seu novo melhor amigo.", gender: "F", age: "adulto", isFavorite: false, adopted: false }
 ];
 
-/* Função para renderizar os posts no feed */
-function renderPosts(displayList) {
-    const feed = document.getElementById('feed');
-    feed.innerHTML = '';
+/* Função para buscar os pets cadastrados no LocalStorage */
+function getPetsFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("pets")) || [];
+}
 
-    if (displayList.length === 0) {
-        feed.innerHTML = '<p>Nenhum animal para exibir.</p>';
+/* Função para renderizar os posts no feed */
+function renderPosts() {
+    const feed = document.getElementById("feed");
+    feed.innerHTML = "";
+
+    // Junta os pets fixos com os cadastrados no localStorage
+    const allPosts = [...posts, ...getPetsFromLocalStorage()];
+
+    if (allPosts.length === 0) {
+        feed.innerHTML = "<p>Nenhum animal para exibir.</p>";
         return;
     }
 
-    displayList.forEach(post => {
+    allPosts.forEach(post => {
         // Ignora posts que já foram adotados
         if (post.adopted) return;
 
-        const postDiv = document.createElement('div');
-        postDiv.classList.add('post');
+        const postDiv = document.createElement("div");
+        postDiv.classList.add("post");
         postDiv.innerHTML = `
-            <h3>${post.user}</h3>
-            <img src="${post.image}" alt="Imagem do animal">
-            <p>${post.caption}</p>
+            <h3>${post.user || post.nome}</h3>
+            <img src="${post.image || post.imagem || '/assests/default.jpg'}" alt="Imagem do animal" 
+     onerror="this.onerror=null;this.src='/assests/default.jpg';">
+
+            <p>${post.caption || post.descricao}</p>
             <div class="actions">
                 <button class="btn" onclick="toggleFavorite(${post.id})">${post.isFavorite ? 'Desfavoritar' : 'Favoritar'}</button>
                 <button class="btn" onclick="adoptPost(${post.id})">Adotar</button>
             </div>
-            <p><small>Sexo: ${post.gender} | Idade: ${post.age}</small></p>
+            <p><small>Sexo: ${post.gender || 'Não informado'} | Idade: ${post.age || 'Não informado'}</small></p>
         `;
 
         feed.appendChild(postDiv);
@@ -44,10 +54,11 @@ function renderPosts(displayList) {
 
 /* Função para atualizar a renderização com base nos filtros */
 function filterPosts() {
-    const genderFilter = document.getElementById('filter-gender').value;
-    const ageFilter = document.getElementById('filter-age').value;
+    const genderFilter = document.getElementById("filter-gender").value;
+    const ageFilter = document.getElementById("filter-age").value;
 
-    let filtered = posts.filter(post => !post.adopted);
+    let allPosts = [...posts, ...getPetsFromLocalStorage()];
+    let filtered = allPosts.filter(post => !post.adopted);
 
     if (genderFilter) {
         filtered = filtered.filter(post => post.gender === genderFilter);
@@ -62,32 +73,37 @@ function filterPosts() {
 
 /* Função para alternar o status de favorito */
 function toggleFavorite(id) {
-    const post = posts.find(p => p.id === id);
+    let allPosts = [...posts, ...getPetsFromLocalStorage()];
+    const post = allPosts.find(p => p.id === id);
     if (post) {
         post.isFavorite = !post.isFavorite;
-        filterPosts();
+        localStorage.setItem("pets", JSON.stringify(allPosts.filter(p => p.id > 10))); // Salva só os novos no localStorage
+        renderPosts();
     }
 }
 
-/* Função para adotar o animal (remove do feed) */
+/* Função para adotar o animal */
 function adoptPost(id) {
-    const post = posts.find(p => p.id === id);
+    let allPosts = [...posts, ...getPetsFromLocalStorage()];
+    const post = allPosts.find(p => p.id === id);
     if (post) {
         post.adopted = true;
-        filterPosts();
+        localStorage.setItem("pets", JSON.stringify(allPosts.filter(p => p.id > 10))); // Salva só os novos no localStorage
+        renderPosts();
     }
 }
 
 /* Função para mostrar apenas os animais favoritos */
 function showFavorites() {
-    const favorites = posts.filter(post => post.isFavorite && !post.adopted);
+    let allPosts = [...posts, ...getPetsFromLocalStorage()];
+    const favorites = allPosts.filter(post => post.isFavorite && !post.adopted);
     renderPosts(favorites);
 }
 
-/* Adiciona os event listeners para os filtros após o carregamento do DOM */
-window.addEventListener('DOMContentLoaded', () => {
-    renderPosts(posts);
+/* Carregar os posts ao iniciar */
+window.addEventListener("DOMContentLoaded", () => {
+    renderPosts();
 
-    document.getElementById('filter-gender').addEventListener('change', filterPosts);
-    document.getElementById('filter-age').addEventListener('change', filterPosts);
+    document.getElementById("filter-gender").addEventListener("change", filterPosts);
+    document.getElementById("filter-age").addEventListener("change", filterPosts);
 });
